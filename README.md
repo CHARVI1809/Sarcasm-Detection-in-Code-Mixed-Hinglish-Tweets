@@ -176,9 +176,4 @@ Matplotlib & Seaborn
 
 If you want, I can also create:
 
-✅ A professional requirements.txt
-✅ Resume-ready 3-line project summary
-✅ Short LinkedIn post about this project
-✅ Clean repository folder structure
 
-Just tell me 🚀
