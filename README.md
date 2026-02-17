@@ -1,146 +1,206 @@
-🧠 Sarcasm Detection in Code Mixed Hinglish Tweets
-📌 Project Overview
+# Sarcasm Detection in Code-Mixed Hinglish Tweets
 
-This project focuses on building a Sarcasm Detection System using NLP techniques. The goal is to classify tweets as sarcastic (1) or non-sarcastic (0) using different approaches and compare their performance.
+An NLP project that automatically detects sarcasm in Hinglish (Hindi-English code-mixed) tweets using Machine Learning and Transformer-based models.
 
-The project is divided into three notebooks:
+---
 
-Baseline ML (without SMOTE)
+## Overview
 
-ML with SMOTE (balanced dataset)
+Sarcasm detection is a challenging task in Natural Language Processing because sarcasm depends on context and implicit meaning. This challenge becomes even more difficult in code-mixed languages like Hinglish.
 
-Deep Learning using mBERT
+This project builds and compares multiple models to classify tweets as:
 
-📓 Notebook 1: Sarcasm Detection Baseline
-Workflow:
+- Sarcastic  
+- Non-Sarcastic  
 
-Data Preparation
+Three different approaches were implemented and compared:
 
-Loaded dataset
+- Baseline Machine Learning Models  
+- SMOTE-based Balanced Models  
+- Transformer-based Multilingual BERT (mBERT)  
 
-Checked missing values
+The transformer model achieved the best performance.
 
-Converted labels (YES/NO → 1/0)
+---
 
-Text Preprocessing
+## Key Features
 
-Lowercasing
+- Works on real Hinglish tweet dataset  
+- Handles class imbalance using SMOTE  
+- Compares traditional ML and Transformer models  
+- Uses contextual embeddings with mBERT  
+- Achieves high sarcasm detection performance  
 
-Removing punctuation
+---
 
-Stopword removal
+## Dataset
 
-Lemmatization
+- Hinglish code-mixed tweets dataset  
+- Binary classification:
+  - 1 → Sarcastic  
+  - 0 → Non-Sarcastic  
+- Highly imbalanced dataset  
 
-Feature Extraction
+Example:
+wah kya performance hai, bilkul world class
 
-TF-IDF Vectorization
 
-Train–Test Split
+---
 
-Model Training
+## Methodology
 
-Logistic Regression
+### Notebook 1: Baseline Machine Learning Models
 
-SVM
+**Goal:** Establish baseline performance.
 
-Random Forest
+Steps:
 
-Model Evaluation
+- Data Preparation  
+- Text Preprocessing  
+- Train-Test Split (80:20)  
+- Feature Extraction using TF-IDF  
+- Model Training:
+  - Logistic Regression  
+  - SVM  
+  - Random Forest  
+- Model Evaluation  
 
-Accuracy
+---
 
-F1 Score
+### Notebook 2: SMOTE-Based Machine Learning Models
 
-Confusion matrix
+**Goal:** Handle class imbalance and improve detection.
 
-Performance comparison graph
+Steps:
 
-This notebook establishes the baseline performance.
+- Data Preparation  
+- Text Preprocessing  
+- TF-IDF Feature Extraction  
+- Applied SMOTE balancing  
+- Model Training:
+  - Logistic Regression  
+  - SVM  
+  - Random Forest  
+  - Naive Bayes  
+- Model Evaluation  
 
-📓 Notebook 2: Sarcasm Detection with SMOTE (Balanced Dataset)
-Workflow:
+---
 
-Data Preparation
+### Notebook 3: Transformer-Based mBERT Model
 
-Loaded dataset and checked structure
+**Goal:** Use contextual embeddings for best performance.
 
-Verified missing values
+Steps:
 
-Converted labels (YES/NO → 1/0)
+- Data Preparation  
+- Text Preprocessing  
+- Label Encoding  
+- Train-Test Split  
+- Tokenization using mBERT tokenizer  
+- Fine-tuning pre-trained mBERT  
+- Model Evaluation  
 
-Exploratory Data Analysis (EDA)
+---
 
-Tweet distribution analysis
+## Results
 
-Tweet length distribution
+| Model | Accuracy | F1 Score |
+|------|----------|----------|
+| Logistic Regression (Baseline) | 93.29% | 0.67 |
+| Support Vector Machine (SMOTE) | 94.6% | 0.75 |
+| mBERT Transformer | **96.85%** | **84.79%** |
 
-Common and top words extraction
+Conclusion:
 
-Text Preprocessing
+- Baseline models failed due to imbalance  
+- SMOTE improved sarcasm detection  
+- mBERT achieved best performance  
 
-Lowercasing
+---
 
-Removing punctuation and special characters
+## Tech Stack
 
-Stopword removal
+**Language:**
 
-Lemmatization
+- Python  
 
-Feature Extraction
+**Libraries:**
 
-TF-IDF Vectorization
+- Scikit-learn  
+- Pandas  
+- NumPy  
+- Matplotlib  
+- imbalanced-learn  
+- HuggingFace Transformers  
+- PyTorch  
 
-Converted text into numerical format
+---
 
-Handling Imbalanced Data
+## Project Structure
 
-Applied SMOTE / Oversampling
+## Project Structure
 
-Model Training
+```
+Sarcasm-Detection-Hinglish/
+│
+├── dataset/
+│   └── hinglish_sarcasm_dataset.csv
+│
+├── notebooks/
+│   ├── Sarcasm Detection Baseline.ipynb
+│   ├── Sarcasm detection using SMOTE.ipynb
+│   └── Sarcasm detection using mBERT.ipynb
+│
+├── requirements.txt
+│
+└── README.md
+```
 
-Logistic Regression
+---
 
-Support Vector Machine (SVM)
+## Installation
 
-Random Forest
+Clone the repository:
+git clone https://github.com/CHARVI1809/Sarcasm-Detection-in-Code-Mixed-Hinglish-Tweets
 
-Naive Bayes
+Install dependencies:
+pip install -r requirements.txt
 
-Model Evaluation
+Run:
 
-Accuracy
 
-Precision
+---
 
-Recall
+## Applications
 
-F1 Score
+- Sentiment Analysis  
+- Social Media Monitoring  
+- Opinion Mining  
+- Chatbots  
 
-AUC Score
+---
 
-Top 15 fetures
+## Authors
 
-This notebook analyzes how balancing the dataset improves performance and fairness.
+**Charvi Gupta**  
+B.Tech Computer Science and Engineering  
+Manipal University Jaipur  
 
-📓 Notebook 3: Sarcasm Detection using mBERT (Multilingual BERT Model)
-Workflow:
+**Ananya Srivastava**  
+B.Tech Computer Science and Engineering  
+Manipal University Jaipur  
+  
+## Acknowledgement
 
-Data Loading and Preparation
+Thanks to the open-source NLP community and HuggingFace for providing transformer models.
 
-Minimal Preprocessing
+---
 
-No heavy cleaning (BERT handles context internally)
 
-Tokenization using mBERT tokenizer
 
-Fine-tuning mBERT model for binary classification
 
-Evaluation
 
-Accuracy
 
-F1 Score
 
 AUC
 
