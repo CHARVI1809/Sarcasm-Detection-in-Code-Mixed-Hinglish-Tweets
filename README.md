@@ -108,7 +108,7 @@ Steps:
 |------|----------|----------|
 | Logistic Regression (Baseline) | 93.29% | 0.67 |
 | Support Vector Machine (SMOTE) | 94.6% | 0.75 |
-| mBERT Transformer | **96.85%** | **84.79%** |
+| mBERT Transformer | **96.67%** | **0.8372%** |
 
 Conclusion:
 
@@ -135,8 +135,6 @@ Conclusion:
 - PyTorch  
 
 ---
-
-## Project Structure
 
 ## Project Structure
 
